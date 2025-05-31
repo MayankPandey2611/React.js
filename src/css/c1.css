@@ -1,0 +1,107 @@
+
+body{
+    background-color: lightblue;
+}
+
+.head{
+    color: red;
+}
+
+#data{
+    color:rebeccapurple;
+}
+
+#myCard{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+
+#myCard1{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#footer{
+    width: 100%;
+    height: 50vh;
+    background-color: aqua;
+}
+
+#head{
+    background-color: grey;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+   
+}
+#head #a{
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+     
+    #contact{
+        display: grid;
+       
+    }
+    
+    #contact h1{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        font-size: 35px;
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
+    
+    #contact .send{
+        background-color: blue;
+        color: white;
+        width: 150px;
+        height:45px;
+        font-size: 16px;
+        border: 0px solid red;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+    
+    #contact .send:hover{
+        background-color:#f0e3e3cd;
+        color: black;
+       
+    
+    }
+    
+    #contact input{
+        width: 500px;
+        height: 60px;
+        background-color: #ebebebd8;
+        color:black;
+       border: 0px solid grey;
+       border-top-left-radius: 30px;
+       border-top-right-radius: 30px;
+       border-bottom-left-radius: 30px;
+       border-bottom-right-radius: 30px;
+    }
+       
+    #contact textarea{
+        width: 500px;
+        height: 90px;
+        background-color: #ebebebd8;
+        color:black;
+       border: 0px solid grey;
+       border-top-left-radius: 30px;
+       border-top-right-radius: 30px;
+       border-bottom-left-radius: 30px;
+       border-bottom-right-radius: 30px;
+    }
+    
