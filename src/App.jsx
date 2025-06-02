@@ -36,14 +36,23 @@
 // const ans = Prodata.map((key)=> <ProDesign pn={key.pno} pnm={key.pname} pq={key.qty} pc={key.city} />)
 
 
-import { BrowserRouter , Routes , Route } from "react-router-dom";
-import Layout from "./Layout";
-import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
-import Projects from "./Projects";
-import NoPage from "./NoPage";
+// import { BrowserRouter , Routes , Route } from "react-router-dom";
+// import Layout from "./Pages/Layout";
+// import Home from "./Pages/Home";
+// import About from "./Pages/About";
+// import Contact from "./Pages/Contact";
+// import Projects from "./Projects";
+// import NoPage from "./Pages/NoPage";
 
+
+import { BrowserRouter,Routes , Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./Pages/Home";
+import Services from "./Pages/Services"
+import Contact from "./Pages/Contact"
+import About from "./Pages/About";
+
+import Projects from "./Pages/Projects";
 const App =()=>{
 
   return (
@@ -87,7 +96,7 @@ const App =()=>{
 
 
 
-<BrowserRouter >
+{/* <BrowserRouter >
   <Routes>
 <Route path="/"  element={<Layout />}>
   <Route index element={<Home/>}/>
@@ -99,7 +108,24 @@ const App =()=>{
 
 </Route>
   </Routes>
+</BrowserRouter> */}
+
+
+
+<BrowserRouter>
+  <Routes>
+    <Route path="/"  element={<Layout/>}>
+      <Route index element={<Home/>}/>
+      <Route path="home" element={<Home/>}/>
+      <Route path="about" element={<About/>}/>
+      <Route path="projects" element={<Projects/>}/>
+      <Route path="services" element={<Services/>}/>
+      <Route path="contact" element={<Contact/>}/>
+    </Route>
+  </Routes>
 </BrowserRouter>
+
+
 
 
 </>

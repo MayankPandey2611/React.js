@@ -5,6 +5,7 @@ const NoPage = ()=>{
             <h1>
              Error : Page Not Found 404 !!
             </h1>
+            
         </>
     )
 }

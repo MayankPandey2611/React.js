@@ -2,10 +2,12 @@
 import {Link,Outlet} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import TopMenu from "./components/TopMenu";
+import Footer from "./components/Footer";
 const Layout = ()=>{
     return(
         <>
-        <div id="head">
+        {/* <div id="head">
           <Link to ="home" id="a"> Home </Link> 
           <Link to ="about" id="a" > About </Link>  
           <Link to ="projects" id="a" > projects </Link>  
@@ -17,7 +19,7 @@ const Layout = ()=>{
           <Outlet style={{backgroundColor:"yellow"}} />
 
     <br/>
-                  <Card className="text-center" style={{color:"white" , backgroundColor:"black"}}>
+    <Card className="text-center" style={{color:"white" , backgroundColor:"black"}}>
       
       <Card.Body>
         <Card.Title style={{color:"red"}}>Portfolio</Card.Title>
@@ -35,7 +37,13 @@ const Layout = ()=>{
         <Button variant="primary">Send</Button>
       </Card.Body>
       <Card.Footer className="text-muted">2 days ago</Card.Footer>
-    </Card>
+    </Card> */}
+
+
+<TopMenu/>
+<Outlet/>
+<Footer/>
+
         </>
     )
 }

@@ -105,3 +105,8 @@ body{
        border-bottom-right-radius: 30px;
     }
     
+
+    #footer{
+        background-color: aquamarine;
+        margin-top: 100px;
+    }

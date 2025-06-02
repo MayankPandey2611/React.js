@@ -2,7 +2,7 @@
 const Contact = ()=>{
     return(
         <>
-            <h1 style={{display:"flex",justifyContent:"center",color:"grey",fontSize:"50px"}}>
+            {/* <h1 style={{display:"flex",justifyContent:"center",color:"grey",fontSize:"50px"}}>
                  Contact Us 
             </h1>
             <br/>
@@ -22,7 +22,9 @@ const Contact = ()=>{
              
              
         </form>
-    </section>
+    </section> */}
+
+    <h1>Contact Us Page</h1>
         </>
     )
 }

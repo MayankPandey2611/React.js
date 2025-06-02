@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 const Footer=()=>{
     return(
         <>
-            <Card className="text-center" style={{color:"white" , backgroundColor:"black"}}>
+            {/* <Card className="text-center" style={{color:"white" , backgroundColor:"black"}}>
       <Card.Header>Featured</Card.Header>
       <Card.Body>
         <Card.Title style={{color:"red"}}>Portfolio</Card.Title>
@@ -21,7 +21,13 @@ const Footer=()=>{
       </Card.Body>
       <Card.Footer className="text-muted">2 days ago</Card.Footer>
     </Card>
-    
+     */}
+
+
+<div id='footer'>
+
+</div>
+
         </>
     )
 }
