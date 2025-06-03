@@ -1,5 +1,4 @@
 
-
 // import TopMenu from "./components/TopMenu";
 // import Banner from "./components/Banner";
 // import MyCard from "./components/MyCard";
@@ -51,9 +50,32 @@ import Home from "./Pages/Home";
 import Services from "./Pages/Services"
 import Contact from "./Pages/Contact"
 import About from "./Pages/About";
-
 import Projects from "./Pages/Projects";
+
 const App =()=>{
+
+// const myname=(nm , lm)=>{
+//   alert(`welcome ${nm} ${ lm}`)
+// }
+
+
+// const display =(e)=>{
+//   // console.log(e.type);
+//   let nm = e.target.name;
+//   let val = e.target.value;
+
+//   alert(`myname ${nm}   value  ${val}`)
+  
+// }
+
+
+const handle=(e)=>{
+  let nm = e.target.name;
+  let val = e.target.value;
+  console.log({[nm]: val});
+  
+}
+
 
   return (
 
@@ -111,7 +133,7 @@ const App =()=>{
 </BrowserRouter> */}
 
 
-
+{/* 
 <BrowserRouter>
   <Routes>
     <Route path="/"  element={<Layout/>}>
@@ -123,11 +145,17 @@ const App =()=>{
       <Route path="contact" element={<Contact/>}/>
     </Route>
   </Routes>
-</BrowserRouter>
+</BrowserRouter> */}
 
 
 
+<h1>Hello</h1>
+{/* <button onClick={()=>{myname('mayank','pandey')}}>Click Here</button> */}
 
+{/* <button name="mayank" value="96" onClick={display}>click here</button> */}
+
+
+Enter City : <input type="text" name="mycity" value="bhopal" onChange={handle}/>
 </>
 
   )
