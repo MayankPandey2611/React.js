@@ -44,42 +44,52 @@
 // import NoPage from "./Pages/NoPage";
 
 
-import { BrowserRouter,Routes , Route } from "react-router-dom";
-import Layout from "./Layout";
-import Home from "./Pages/Home";
-import Services from "./Pages/Services"
-import Contact from "./Pages/Contact"
-import About from "./Pages/About";
-import Projects from "./Pages/Projects";
+// import { BrowserRouter,Routes , Route } from "react-router-dom";
+// import Layout from "./Layout";
+// import Home from "./Pages/Home";
+// import Services from "./Pages/Services"
+// import Contact from "./Pages/Contact"
+// import About from "./Pages/About";
+// import Projects from "./Pages/Projects";
+
+
+
+
+
+
+
+
+
+import { useState , useEffect} from "react";
 
 const App =()=>{
 
-// const myname=(nm , lm)=>{
-//   alert(`welcome ${nm} ${ lm}`)
-// }
-
-
-// const display =(e)=>{
-//   // console.log(e.type);
-//   let nm = e.target.name;
-//   let val = e.target.value;
-
-//   alert(`myname ${nm}   value  ${val}`)
-  
-// }
-
-
-const handle=(e)=>{
-  let nm = e.target.name;
-  let val = e.target.value;
-  console.log({[nm]: val});
-  
-}
-
+  const [myval,setVal ] = useState(0);
+useEffect(()=>{
+  setTimeout(()=>{
+    setVal(myval+1);
+  },1000)
+})
 
   return (
 
 <>
+
+
+<h1 >Counter App:{myval} </h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {/* <table cellSpacing={1} border={1} cellPadding={1} align="center">
   <tr>
@@ -149,13 +159,14 @@ const handle=(e)=>{
 
 
 
-<h1>Hello</h1>
+{/* <h1>Hello</h1> */}
 {/* <button onClick={()=>{myname('mayank','pandey')}}>Click Here</button> */}
-
 {/* <button name="mayank" value="96" onClick={display}>click here</button> */}
+{/* Enter City : <input type="text" name="mycity" value="bhopal" onChange={handle}/> */}
 
 
-Enter City : <input type="text" name="mycity" value="bhopal" onChange={handle}/>
+
+
 </>
 
   )
