@@ -4,6 +4,7 @@
 // import MyCard from "./components/MyCard";
 // import Footer from "./components/Footer";
 
+
 // import Student from "./Empdata"
 
 //  const ans= Student.map((key)=>{
@@ -52,31 +53,50 @@
 // import About from "./Pages/About";
 // import Projects from "./Pages/Projects";
 
+import { useState } from "react";
+import axios from "axios";
+const App = ()=>{
+const [input , setInput] = useState({});
+
+const handle = (e)=>{
+let name = e.target.name;
+let value = e.target.value;
+
+setInput(values=>({...values , [name]:value}));
+}
 
 
+const handlesubmit =async ()=>{
+  let api = "http://localhost:3000/students";
 
+  const response = await axios.post(api,input);
+  alert("data inserted !!")
+}
 
-
-
-
-
-import { useState , useEffect} from "react";
-
-const App =()=>{
-
-  const [myval,setVal ] = useState(0);
-useEffect(()=>{
-  setTimeout(()=>{
-    setVal(myval+1);
-  },1000)
-})
-
-  return (
-
+  return(
 <>
 
+<h1>Application Employee Data</h1>
 
-<h1 >Counter App:{myval} </h1>
+Enter Name: <input type="text" name="name" onChange={handle}/>
+<br/>
+
+Enter Empno: <input type="text" name="Empno" onChange={handle}/>
+<br/>
+
+Enter Degisnation: <input type="text" name="Degisnation" onChange={handle}/>
+<br/>
+
+Enter City: <input type="text" name="City" onChange={handle}/>
+<br/>
+
+<button onClick={handlesubmit}>Submit</button>
+
+    </>
+  )
+}
+
+
 
 
 
@@ -167,9 +187,6 @@ useEffect(()=>{
 
 
 
-</>
 
-  )
-}
   
 export default App;

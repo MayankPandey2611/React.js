@@ -133,3 +133,74 @@ const Cybrom =()=>{
     )
 }
 export default Cybrom;
+
+
+// import { useState , useEffect} from "react";
+
+// const App =()=>{
+
+//   const [myval,setMyVal ] = useState(0);
+//   const [multi,setMulti ] = useState(0);
+
+// useEffect(()=>{
+
+//   setMulti(myval*2);
+
+// },[myval])
+
+//   return (
+
+// <>
+
+
+// <h1 >welcome </h1>
+
+// <button onClick={()=>{setMyVal(myval+1)}}>Click Here!</button>
+
+// <h3>Counter App:{myval} </h3>
+// <h4>Counter App:{multi} </h4>
+
+
+
+
+
+
+import { useState } from "react";
+
+const App=()=>{
+
+  const [input , setInput] = useState({})
+
+  const handle = (e)=>{
+    let name = e.target.name;
+    let value = e.target.value;
+
+    setInput(values =>({...values , [name] : value}))
+    console.log(input);
+    
+  }
+  
+  return(
+    <>
+<h1>Application Form</h1>
+
+<br/>
+Enter Rollno : <input type="text"   name = "rollno"
+  onChange={handle} />
+
+<br/>
+Enter Name : <input type="text"   name = "name"
+  onChange={handle} />
+ 
+<br/>
+Enter city : <input type="text"   name = "city"
+  onChange={handle} />
+<br/>
+Enter fees : <input type="text"    name = "fees"
+  onChange={handle} />
+
+<br/>
+<button onClick={handle}>Click Here!</button>
+    </>
+  )
+}
