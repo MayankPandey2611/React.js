@@ -1,9 +1,14 @@
 
-// import TopMenu from "./components/TopMenu";
-// import Banner from "./components/Banner";
-// import MyCard from "./components/MyCard";
-// import Footer from "./components/Footer";
 
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home";
+import Insert from "./Pages/insert";
+import Display from "./Pages/display";
+import Layout from "./Layout";
+import Update from "./Pages/Update";
+import Search from "./Pages/Search";
+import Contact from "./Pages/Contact"
 
 // import Student from "./Empdata"
 
@@ -53,44 +58,27 @@
 // import About from "./Pages/About";
 // import Projects from "./Pages/Projects";
 
-import { useState } from "react";
-import axios from "axios";
+
+
 const App = ()=>{
-const [input , setInput] = useState({});
-
-const handle = (e)=>{
-let name = e.target.name;
-let value = e.target.value;
-
-setInput(values=>({...values , [name]:value}));
-}
-
-
-const handlesubmit =async ()=>{
-  let api = "http://localhost:3000/students";
-
-  const response = await axios.post(api,input);
-  alert("data inserted !!")
-}
-
   return(
-<>
+    <>
 
-<h1>Application Employee Data</h1>
+<BrowserRouter> 
+<Routes>
+  <Route path="/" element={<Layout/>}>
+  <Route index element={<Home/>}/>
+  <Route path="home" element={<Home/>}/>
+  <Route path="insert" element={<Insert/>}/>
+  <Route path="display" element={<Display/>}/>
+  <Route path="update" element={<Update/>}/>
+  <Route path="search" element={<Search/>}/>
+  <Route path="contact" element={<Contact/>}/>
 
-Enter Name: <input type="text" name="name" onChange={handle}/>
-<br/>
+  </Route>
+</Routes>
+</BrowserRouter>
 
-Enter Empno: <input type="text" name="Empno" onChange={handle}/>
-<br/>
-
-Enter Degisnation: <input type="text" name="Degisnation" onChange={handle}/>
-<br/>
-
-Enter City: <input type="text" name="City" onChange={handle}/>
-<br/>
-
-<button onClick={handlesubmit}>Submit</button>
 
     </>
   )

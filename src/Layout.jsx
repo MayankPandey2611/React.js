@@ -40,9 +40,22 @@ const Layout = ()=>{
     </Card> */}
 
 
-<TopMenu/>
+{/* <TopMenu/>
 <Outlet/>
-<Footer/>
+<Footer/> */}
+
+
+<Link to="home"> Home </Link> |
+<Link to="insert"> Insert </Link> |
+<Link to="display"> Display </Link> |
+<Link to="update"> Update </Link> |
+<Link to="search"> Search </Link> |
+<Link to="contact"> Contact </Link> 
+
+<hr size='4' color='red'/>
+<Outlet/>
+<hr  size='4' color='red'/>
+mycompany.visit.www.google.com @CopyRight 2025
 
         </>
     )

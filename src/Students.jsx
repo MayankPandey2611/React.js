@@ -165,42 +165,89 @@ export default Cybrom;
 
 
 
-import { useState } from "react";
+// import { useState } from "react";
 
-const App=()=>{
+// const App=()=>{
 
-  const [input , setInput] = useState({})
+//   const [input , setInput] = useState({})
 
-  const handle = (e)=>{
-    let name = e.target.name;
-    let value = e.target.value;
+//   const handle = (e)=>{
+//     let name = e.target.name;
+//     let value = e.target.value;
 
-    setInput(values =>({...values , [name] : value}))
-    console.log(input);
+//     setInput(values =>({...values , [name] : value}))
+//     console.log(input);
     
-  }
+//   }
   
-  return(
-    <>
-<h1>Application Form</h1>
+//   return(
+//     <>
+// <h1>Application Form</h1>
 
-<br/>
-Enter Rollno : <input type="text"   name = "rollno"
-  onChange={handle} />
+// <br/>
+// Enter Rollno : <input type="text"   name = "rollno"
+//   onChange={handle} />
 
-<br/>
-Enter Name : <input type="text"   name = "name"
-  onChange={handle} />
+// <br/>
+// Enter Name : <input type="text"   name = "name"
+//   onChange={handle} />
  
-<br/>
-Enter city : <input type="text"   name = "city"
-  onChange={handle} />
-<br/>
-Enter fees : <input type="text"    name = "fees"
-  onChange={handle} />
+// <br/>
+// Enter city : <input type="text"   name = "city"
+//   onChange={handle} />
+// <br/>
+// Enter fees : <input type="text"    name = "fees"
+//   onChange={handle} />
 
+// <br/>
+// <button onClick={handle}>Click Here!</button>
+//     </>
+//   )
+// }
+
+
+
+
+
+import { useState } from "react";
+import axios from "axios";
+const App = ()=>{
+const [input , setInput] = useState({});
+
+const handle = (e)=>{
+let name = e.target.name;
+let value = e.target.value;
+
+setInput(values=>({...values , [name]:value}));
+}
+
+
+const handlesubmit =async ()=>{
+  let api = "http://localhost:3000/students";
+
+  const response = await axios.post(api,input);
+  alert("data inserted !!")
+}
+
+  return(
+<>
+
+<h1>Application Employee Data</h1>
 <br/>
-<button onClick={handle}>Click Here!</button>
+Enter Name: <input type="text" name="name" onChange={handle}/>
+<br/>
+<br/>
+Enter Empno: <input type="text" name="Empno" onChange={handle}/>
+<br/>
+<br/>
+Enter Degisnation: <input type="text" name="Degisnation" onChange={handle}/>
+<br/>
+<br/>
+Enter City: <input type="text" name="City" onChange={handle}/>
+<br/>
+<br/>
+<button onClick={handlesubmit}>Submit</button>
+
     </>
   )
 }
