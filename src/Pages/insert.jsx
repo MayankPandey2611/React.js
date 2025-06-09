@@ -26,10 +26,11 @@ const handlesubmit =async ()=>{
 
 <h1>Insert Employee Data</h1>
 <br/>
-Enter Name: <input type="text" name="name" onChange={handle}/>
-<br/>
-<br/>
+
 Enter Empno: <input type="text" name="Empno" onChange={handle}/>
+<br/>
+<br/>
+Enter Name: <input type="text" name="name" onChange={handle}/>
 <br/>
 <br/>
 Enter Degisnation: <input type="text" name="Degisnation" onChange={handle}/>

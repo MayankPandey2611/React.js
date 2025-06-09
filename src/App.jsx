@@ -9,7 +9,7 @@ import Layout from "./Layout";
 import Update from "./Pages/Update";
 import Search from "./Pages/Search";
 import Contact from "./Pages/Contact"
-
+import Edit from "./Pages/Edit";
 // import Student from "./Empdata"
 
 //  const ans= Student.map((key)=>{
@@ -64,6 +64,7 @@ const App = ()=>{
   return(
     <>
 
+
 <BrowserRouter> 
 <Routes>
   <Route path="/" element={<Layout/>}>
@@ -74,6 +75,7 @@ const App = ()=>{
   <Route path="update" element={<Update/>}/>
   <Route path="search" element={<Search/>}/>
   <Route path="contact" element={<Contact/>}/>
+  <Route path="edit/:id" element={<Edit/>}/>
 
   </Route>
 </Routes>
@@ -83,13 +85,6 @@ const App = ()=>{
     </>
   )
 }
-
-
-
-
-
-
-
 
 
 

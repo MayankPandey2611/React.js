@@ -1,46 +1,25 @@
 {
   "students": [
     {
-      "id": "1",
-      "rollno": 96,
-      "name": "mayank",
-      "city": "bhopal",
-      "fees": 50000
-    },
-    {
-      "id": "e2af",
-      "rollno": "121",
+      "id": "5a23",
+      "Empno": "1001",
       "name": "mayank pandey",
-      "city": "bhopal",
-      "fees": "50000"
-    },
-    {
-      "id": "f633",
-      "rollno": "96",
-      "name": "mayank",
-      "city": "rewa",
-      "fees": "700000"
-    },
-    {
-      "id": "2b3e",
-      "name": "mayank pandey",
-      "Empno": "121",
-      "Degisnation": "engineer",
-      "City": "bhopal"
-    },
-    {
-      "id": "77f6",
-      "name": "om",
-      "Empno": "74",
       "Degisnation": "developer",
-      "Salary": "500000"
+      "Salary": "60000"
     },
     {
-      "id": "6603",
+      "id": "34df",
+      "Empno": "1003",
       "name": "om",
-      "Empno": "74",
+      "Degisnation": "admin",
+      "Salary": "60000"
+    },
+    {
+      "id": "b8f2",
+      "Empno": "1004",
+      "name": "ayush",
       "Degisnation": "developer",
-      "Salary": "500000"
+      "Salary": "32000"
     }
   ]
 }
