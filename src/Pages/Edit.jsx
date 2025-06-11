@@ -14,22 +14,37 @@ const Edit =()=>{
     useEffect(()=>{
         loaddata();
     },[])
+const handleinput = (e)=>{
+    let name = e.target.name;
+    let value = e.target.value;
+
+    setmydata(values => ({...values , [name] : value}))
+}
+
+const handlesubmit = async()=>{
+    let api  =`http://localhost:3000/students/${id}`
+    let response = await axios.put(api , mydata)
+    alert('DATA UPDATED')
+    console.log(response.data);
+    
+}
+
     return(
         <>
 <h1>Edit the Data Details</h1>
 
-Enter Empno : <input type="text"  value={mydata.Empno} />
+Enter Empno : <input type="text" name="Empno"  value={mydata.Empno}  onChange={handleinput}/>
 <br />
 
-Enter Name : <input type="text"  value={mydata.name} />
+Enter Name : <input type="text" name="name" value={mydata.name}  onChange={handleinput} />
 <br />
 
-Enter Degisnation : <input type="text"  value={mydata.Degisnation} />
+Enter Degisnation : <input type="text" name="Degisnation" value={mydata.Degisnation}   onChange={handleinput}/>
 <br />
 
-Enter Salary : <input type="text"  value={mydata.Salary} />
+Enter Salary : <input type="text" name="Salary" value={mydata.Salary}  onChange={handleinput} />
 <br />
-
+<button  onClick={handlesubmit}>Update Data</button>
         </>
     )
 }

@@ -1,15 +1,12 @@
-
-
-
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./Pages/Home";
-import Insert from "./Pages/insert";
-import Display from "./Pages/display";
-import Layout from "./Layout";
-import Update from "./Pages/Update";
-import Search from "./Pages/Search";
-import Contact from "./Pages/Contact"
-import Edit from "./Pages/Edit";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import Home from "./Pages/Home";
+// import Insert from "./Pages/insert";
+// import Display from "./Pages/display";
+// import Layout from "./Layout";
+// import Update from "./Pages/Update";
+// import Search from "./Pages/Search";
+// import Contact from "./Pages/Contact"
+// import Edit from "./Pages/Edit";
 // import Student from "./Empdata"
 
 //  const ans= Student.map((key)=>{
@@ -59,13 +56,52 @@ import Edit from "./Pages/Edit";
 // import Projects from "./Pages/Projects";
 
 
+import { useState, createContext } from "react";
+import Comp1 from "./Comp1";
+
+const usercontext = createContext();
 
 const App = ()=>{
+
+  const [user , setuser] = useState('mayank !!');
+
   return(
     <>
 
 
-<BrowserRouter> 
+<h1>Welcome {user}</h1>
+<usercontext.Provider value={{user}}>
+
+<Comp1 />
+
+</usercontext.Provider>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <BrowserRouter> 
 <Routes>
   <Route path="/" element={<Layout/>}>
   <Route index element={<Home/>}/>
@@ -79,7 +115,9 @@ const App = ()=>{
 
   </Route>
 </Routes>
-</BrowserRouter>
+</BrowserRouter> */}
+
+
 
 
     </>
@@ -173,3 +211,5 @@ const App = ()=>{
 
   
 export default App;
+
+export {usercontext};
