@@ -4,15 +4,15 @@
       "id": "5a23",
       "Empno": "1001",
       "name": "mayank pandey",
-      "Degisnation": "developer",
-      "Salary": "60000"
+      "Degisnation": "Full stack developer",
+      "Salary": "85000"
     },
     {
       "id": "34df",
       "Empno": "1003",
       "name": "om",
       "Degisnation": "admin",
-      "Salary": "60000"
+      "Salary": "45000"
     },
     {
       "id": "b8f2",
@@ -20,6 +20,13 @@
       "name": "ayush",
       "Degisnation": "developer",
       "Salary": "32000"
+    },
+    {
+      "id": "27e6",
+      "Empno": "1006",
+      "name": "yash sharma",
+      "Degisnation": "ai engineer",
+      "Salary": "65000"
     }
   ]
 }

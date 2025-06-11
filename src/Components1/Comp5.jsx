@@ -1,6 +1,5 @@
 
-import { usercontext } from "./App";
-
+import { usercontext } from "../App";
 import { useContext } from "react";
 
 const Comp5 = ()=>{
