@@ -59,49 +59,65 @@
 
 
 
-import { useState, createContext } from "react";
-import Comp1 from "./Components1/Comp1";
+// import { useState, createContext } from "react";
+// import Comp1 from "./Components1/Comp1";
+import Cybrom from "./Cybrom";
 
-const usercontext = createContext();
+// const usercontext = createContext();
 
 const App = ()=>{
 
-  const [user , setuser] = useState('mayank !!');
+  // const [user , setuser] = useState('mayank !!');
 
   return(
     <>
+     {/* GLOBAL ACCESS */}
+
+<h1>Welcome to My App</h1>
+<Cybrom/>
 
 
-<h1>Welcome {user}</h1>
-<usercontext.Provider value={{user}}>
+{/* <Cybrom>
 
-<Comp1 />
-
-</usercontext.Provider>
-
-
-
-
-
-
+  <h3>using children tag !!</h3>
+  
+</Cybrom> */}
 
 
 
+                               {/* ACCESS COMPONENTS */}
 
+{/* <h1>Welcome to my app {user}</h1>
+<button onClick={()=>{setuser("ayush !!")}}>Click Here</button>
+<usercontext.Provider value={{user , setuser}}>
 
+<Cybrom />
 
-
-
-
-
-
-
+</usercontext.Provider> */}
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                {/* CRUD OPERATIONS USAGE */}
 
 
 {/* <BrowserRouter> 
@@ -215,4 +231,4 @@ const App = ()=>{
   
 export default App;
 
-export {usercontext};
+// export {usercontext};
