@@ -1,14 +1,14 @@
 import { useContext } from "react";
 // import Bhopal from "./Bhopal";
-import { mycontext } from "./UserContext";
+import { Mycontext } from "./UserContext";
 
 
-const Cybrom = ()=>{
-    const {name} = useContext(mycontext);
+const Cybrom = ({children})=>{
+    const {name} = useContext(Mycontext);
     return(
         <>
             <h1>Welcome to Cybrom {name}</h1>
-            {/* {children} */}
+            {children}
             {/* <Bhopal /> */}
         </>
     )

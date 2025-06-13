@@ -61,9 +61,10 @@
 
 // import { useState, createContext } from "react";
 // import Comp1 from "./Components1/Comp1";
-import Cybrom from "./Cybrom";
-
 // const usercontext = createContext();
+
+
+import Cybrom from "./Cybrom";
 
 const App = ()=>{
 
@@ -71,12 +72,13 @@ const App = ()=>{
 
   return(
     <>
+
+
+<h1>Welcome to my app</h1>
+<Cybrom />
+
+
      {/* GLOBAL ACCESS */}
-
-<h1>Welcome to My App</h1>
-<Cybrom/>
-
-
 {/* <Cybrom>
 
   <h3>using children tag !!</h3>

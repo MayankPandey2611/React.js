@@ -1,16 +1,17 @@
 import { useState , createContext } from "react";
 
-let mycontext = createContext();
+let Mycontext = createContext();
 const UserContext  = ({children})=>{
 const [name,setname] = useState("mayank !!");
     return(
         <>
-<mycontext.Provider value={{name}}>
+<Mycontext.Provider value={{name}}>
     {children}
-</mycontext.Provider>
+    <h3>using children tag in UserContext code</h3>
+</Mycontext.Provider>
         </>
     )
 }
 
 export default UserContext;
-export  {mycontext};
+export  {Mycontext};
