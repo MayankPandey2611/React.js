@@ -9,6 +9,7 @@
 // import Edit from "./Pages/Edit";
 // import Student from "./Empdata"
 
+
 //  const ans= Student.map((key)=>{
 //     return(
 //       <>
@@ -64,18 +65,65 @@
 // const usercontext = createContext();
 
 
-import Cybrom from "./Cybrom";
+import { useState , useMemo } from "react";
 
 const App = ()=>{
 
   // const [user , setuser] = useState('mayank !!');
+
+  // const [add,setadd] = useState(0)
+  // const [minus,setminus] =useState(100)
+
+  // const mymulti = useMemo(()=>{
+  //   console.log("****");
+  //   return add*2;
+    
+  // },[add])
+
+
+
+const [num , setnum] = useState(0);
+const [city , setcity] = useState("");
+
+
+// const myexpn=useMemo(()=>{
+//   for(var i=0; i<1000000000; i++){
+
+//   }
+//   return num*2;
+// },[num])
+
+function myexpn(){
+  for(var i=0; i<1000000000; i++){}
+  return num*2;
+}
+
+
 
   return(
     <>
 
 
 <h1>Welcome to my app</h1>
-<Cybrom />
+
+Enter number : <input type="number" value={num} onChange={(e)=>{setnum(e.target.value)}} />
+Enter City : <input type="text" value={city} onChange={(e)=>{setcity(e.target.value)}} />
+{/* <h2>My expensive function : {myexpn}</h2> */}
+<h2>my function : {myexpn()}</h2>
+
+
+
+
+{/* 
+<h2>My multiplication: {mymulti}</h2>
+<h2>Addition : {add}</h2>
+<h2>Subtraction: {minus}</h2>
+
+<button onClick={()=>{setadd(add+1)}}>Addition</button>
+<button onClick={()=>{setminus(minus-1)}}>subtraction</button> */}
+
+
+{/* <Cybrom /> */}
 
 
      {/* GLOBAL ACCESS */}
