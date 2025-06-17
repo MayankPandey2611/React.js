@@ -10,6 +10,7 @@
 // import Student from "./Empdata"
 
 
+
 //  const ans= Student.map((key)=>{
 //     return(
 //       <>
@@ -65,7 +66,8 @@
 // const usercontext = createContext();
 
 
-import { useState , useMemo } from "react";
+// import { useState , useMemo } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const App = ()=>{
 
@@ -82,8 +84,8 @@ const App = ()=>{
 
 
 
-const [num , setnum] = useState(0);
-const [city , setcity] = useState("");
+// const [num , setnum] = useState(0);
+// const [city , setcity] = useState("");
 
 
 // const myexpn=useMemo(()=>{
@@ -93,23 +95,93 @@ const [city , setcity] = useState("");
 //   return num*2;
 // },[num])
 
-function myexpn(){
-  for(var i=0; i<1000000000; i++){}
-  return num*2;
+
+
+// function myexpn(){
+//   for(var i=0; i<1000000000; i++){}
+//   return num*2;
+// }
+
+
+const myRef = useRef();
+
+// const func = ()=>{
+//   myRef.current.innerHTML="welcome to cybrom"
+// }
+
+// const format = ()=>{
+//   myRef.current.style.width="400px"
+//   myRef.current.style.border="3px solid black"
+//   myRef.current.style.backgroundColor="orange"
+//   myRef.current.style.padding="30px"
+//   myRef.current.style.borderRadius="30px"
+// }
+
+
+// const [val,setval] = useState("")
+
+// useEffect(()=>{
+//   myRef.current++;
+// })
+
+const border= ()=>{
+  myRef.current.style.width="300px"
+  myRef.current.style.borderRadius="30px"
+  myRef.current.style.border="3px solid red"
 }
 
 
+const bgcolor = ()=>{
+  myRef.current.style.backgroundColor="yellow"
+}
 
+const center = ()=>{
+  myRef.current.style.color="red"
+  myRef.current.style.fontSize="60px"
+}
   return(
     <>
 
 
-<h1>Welcome to my app</h1>
+<h1>Welcome To india</h1>
+<br/>
+<button onClick={border}>Click here</button>
+<button onClick={bgcolor}>Click here</button>
+<button onClick={center}>Click here</button>
+<br/>
 
+<div>
+<br/>
+
+<h1 ref={myRef}>Welcome To cybrom</h1>
+</div>
+
+
+
+
+
+{/* <br/>
+Enter : <input type="text" value={val} onChange={(e)=>{setval(e.target.value)}}/>
+<h1>My Render Count : {myRef.current}</h1> */}
+
+
+
+
+{/* <h1 ref={myRef}>Welcome to my app</h1> */}
+{/* <button onClick={format}>Click Here !!!</button> */}
+
+
+
+
+
+
+
+
+{/* 
 Enter number : <input type="number" value={num} onChange={(e)=>{setnum(e.target.value)}} />
 Enter City : <input type="text" value={city} onChange={(e)=>{setcity(e.target.value)}} />
-{/* <h2>My expensive function : {myexpn}</h2> */}
-<h2>my function : {myexpn()}</h2>
+<h2>My expensive function : {myexpn}</h2> */}
+{/* <h2>my function : {myexpn()}</h2> */}
 
 
 
