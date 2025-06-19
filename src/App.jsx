@@ -67,9 +67,8 @@
 
 
 // import { useState , useMemo } from "react";
-import { useEffect, useRef, useState } from "react";
+// import { useEffect, useRef, useState } from "react";
 
-const App = ()=>{
 
   // const [user , setuser] = useState('mayank !!');
 
@@ -103,7 +102,7 @@ const App = ()=>{
 // }
 
 
-const myRef = useRef();
+// const myRef = useRef();
 
 // const func = ()=>{
 //   myRef.current.innerHTML="welcome to cybrom"
@@ -124,25 +123,42 @@ const myRef = useRef();
 //   myRef.current++;
 // })
 
-const border= ()=>{
-  myRef.current.style.width="300px"
-  myRef.current.style.borderRadius="30px"
-  myRef.current.style.border="3px solid red"
-}
+// const border= ()=>{
+//   myRef.current.style.width="300px"
+//   myRef.current.style.borderRadius="30px"
+//   myRef.current.style.border="3px solid red"
+// }
 
 
-const bgcolor = ()=>{
-  myRef.current.style.backgroundColor="yellow"
-}
+// const bgcolor = ()=>{
+//   myRef.current.style.backgroundColor="yellow"
+// }
 
-const center = ()=>{
-  myRef.current.style.color="red"
-  myRef.current.style.fontSize="60px"
-}
+// const center = ()=>{
+//   myRef.current.style.color="red"
+//   myRef.current.style.fontSize="60px"
+// }
+
+import { Increment,Decrement } from "./counterSlice";
+import { useSelector , useDispatch } from "react-redux";
+
+const App = ()=>{
+
+  const cnt = useSelector((state)=>state.mycounter.count)
+  const dispatch = useDispatch();
+
   return(
     <>
 
+<h1>Welcome !!</h1>
+<button onClick={()=>{dispatch(Increment())}}>Increment</button>
 
+<h2>{cnt}</h2>
+<button onClick={()=>{dispatch(Decrement())}}>Decrement</button>
+
+
+
+{/* 
 <h1>Welcome To india</h1>
 <br/>
 <button onClick={border}>Click here</button>
@@ -156,8 +172,7 @@ const center = ()=>{
 <h1 ref={myRef}>Welcome To cybrom</h1>
 </div>
 
-
-
+ */}
 
 
 {/* <br/>
