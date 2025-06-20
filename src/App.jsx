@@ -11,6 +11,7 @@
 
 
 
+
 //  const ans= Student.map((key)=>{
 //     return(
 //       <>
@@ -139,22 +140,56 @@
 //   myRef.current.style.fontSize="60px"
 // }
 
-import { Increment,Decrement } from "./counterSlice";
-import { useSelector , useDispatch } from "react-redux";
+
+// import { useDispatch, useSelector } from "react-redux";
+// import { Decrement, Increment } from "./counterSlice";
+
+import { useDispatch, useSelector } from "react-redux";
+import { bgcolorchange } from "./colorSlice";
 
 const App = ()=>{
 
-  const cnt = useSelector((state)=>state.mycounter.count)
+  // const count = useSelector((state)=>state.mycounter.count);
+  // const dispatch = useDispatch();
+
+
+  const myclr = useSelector(state=>state.mycolor.color);
   const dispatch = useDispatch();
+
 
   return(
     <>
 
-<h1>Welcome !!</h1>
-<button onClick={()=>{dispatch(Increment())}}>Increment</button>
 
-<h2>{cnt}</h2>
-<button onClick={()=>{dispatch(Decrement())}}>Decrement</button>
+{/* EXAMPLE 2. OF USING USESELECTOR AND USEDISPATCH METHODS */}
+
+<h1>Welcome !!!</h1>
+<button onClick={()=>{dispatch(bgcolorchange())}}>Click To change</button>
+<div style={{width:"200px", height:"300px" , backgroundColor:myclr}}>
+
+</div>
+
+
+{/* EXAMPLE 1. OF USING USESELECTOR AND USEDISPATCH METHODS */}
+{/* <h1>Welcome !!</h1>
+<button onClick={()=>{dispatch(Increment())}}>Increment</button>
+<h2>{count}</h2>
+<button onClick={()=>{dispatch(Decrement())}}>Decrement</button> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
