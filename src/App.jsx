@@ -153,7 +153,9 @@
 
 
 
-
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addtodoTask } from "./todoslice";
 
 const App = ()=>{
 
@@ -164,12 +166,45 @@ const App = ()=>{
 //   const dispatch = useDispatch();
 // const [txtclr , setclr]=useState("");
 
+
+    const [data , setdata] = useState("");
+    const Task = useSelector(state=>state.todo.task);
+    const dispatch = useDispatch();
+let serialno =0;
+    const ans = Task.map((key)=>{
+      serialno++;
+      return(
+      <tr style={{borderCollapse:"collapse" ,border:"1px solid black"}}>
+        <td style={{borderCollapse:"collapse" ,border:"1px solid black"}}>{serialno}</td>
+        <td style={{borderCollapse:"collapse" ,border:"1px solid black"}}>{key.work}</td>
+        <td style={{borderCollapse:"collapse" ,border:"1px solid black"}} ></td>
+        <td style={{borderCollapse:"collapse" ,border:"1px solid black"}}></td>
+        <button>Delete</button>
+      </tr>
+      )
+    })
+{/* <i class="fa-solid fa-circle-check"></i>
+  <i class="fa-solid fa-circle-xmark"></i>
+  <i class="fa-solid fa-trash"></i> */}
   return(
     <>
 
+<h1>Welcome to ToDo App</h1>
+Enter Task : <input type="text" value={data} onChange={(e)=>{setdata(e.target.value)}} />
+<button onClick={()=>{dispatch(addtodoTask({work:data}))}}>Add To List</button>
+  <br/>
+  <br/>
 
-
-
+<table style={{borderCollapse:"collapse" ,border:"1px solid black"}}>
+  <tr style={{borderCollapse:"collapse" ,border:"1px solid black"}}>
+    <th style={{borderCollapse:"collapse" ,border:"1px solid black"}}>#</th>
+    <th style={{borderCollapse:"collapse" ,border:"1px solid black"}}>Given Task</th>
+    <th style={{borderCollapse:"collapse" ,border:"1px solid black"}}>Completed</th>
+    <th style={{borderCollapse:"collapse" ,border:"1px solid black"}}>Not Completed</th>
+    <th style={{borderCollapse:"collapse" ,border:"1px solid black"}}>Delete</th>
+  </tr>
+  {ans}
+</table>
 
 
 {/* 

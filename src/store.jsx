@@ -2,8 +2,6 @@
 // import { configureStore } from "@reduxjs/toolkit";
 // import myReducer from "./counterSlice"
 
-import { configureStore } from "@reduxjs/toolkit";
-
 
 // const store = configureStore({
 //     reducer:{
@@ -45,6 +43,8 @@ import { configureStore } from "@reduxjs/toolkit";
 
 
 
+import { configureStore } from "@reduxjs/toolkit";
+import myReducer from "./todoslice"
 
 
 const store = configureStore({
