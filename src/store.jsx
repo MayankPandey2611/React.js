@@ -3,6 +3,7 @@
 // import myReducer from "./counterSlice"
 
 
+
 // const store = configureStore({
 //     reducer:{
 //         mycounter : myReducer
@@ -43,15 +44,26 @@
 
 
 
-import { configureStore } from "@reduxjs/toolkit";
-import myReducer from "./todoslice"
+// import { configureStore } from "@reduxjs/toolkit";
+// import myReducer from "./todoslice"
 
+
+// const store = configureStore({
+
+//     reducer:{
+//         todo:myReducer
+//     }
+// })
+
+// export  default store;
+
+import { configureStore } from "@reduxjs/toolkit";
+import Myreducer from "./todoslice"
 
 const store = configureStore({
-
     reducer:{
-        todo:myReducer
+        todo : Myreducer
     }
 })
 
-export  default store;
+export default store;
