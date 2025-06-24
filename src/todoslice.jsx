@@ -14,11 +14,32 @@ const todoslice = createSlice({
         },
         taskdelete:(state , actions)=>{
             state.task=state.task.filter(key=>key.id!=actions.payload)
+        },
+        taskcomplete:(state,actions)=>{
+            for(var i=0; i<state.task.length; i++){
+                if (state.task[i].id == actions.payload){
+                    state.task[i].status="complete";
+                }
+            }
+        },
+        taskIncomplete:(state,actions)=>{
+            for(var i=0; i<state.task.length; i++){
+                if (state.task[i].id == actions.payload){
+                    state.task[i].status="Incomplete";
+                }
+            }
+        },
+        editdatasave:(state,actions)=>{
+            for(var i =0; i<state.task.length; i++){
+                if(state.task[i].id == actions.payload.id){
+                    state.task[i].work = actions.payload.work;
+                }
+            }
         }
     }
 })
 
-export const {addtodoTask ,taskdelete}= todoslice.actions;
+export const {addtodoTask ,taskdelete,taskcomplete ,taskIncomplete ,editdatasave}= todoslice.actions;
 export default todoslice.reducer;
 
 

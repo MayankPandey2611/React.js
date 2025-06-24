@@ -159,21 +159,27 @@
 
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addtodoTask,taskdelete } from "./todoslice";
+import { addtodoTask,taskdelete ,taskcomplete, taskIncomplete,editdatasave} from "./todoslice";
 
 const App = ()=>{
 
-  // const count = useSelector((state)=>state.mycounter.count);
-  // const dispatch = useDispatch();
-
-//   const myclr = useSelector(state=>state.mycolor.color);
-//   const dispatch = useDispatch();
-// const [txtclr , setclr]=useState("");
-
-
+  const [btnstatus , setbtn]= useState(true);
+  const [taskid , setid] = useState("");
     const [data , setdata] = useState("");
     const Task = useSelector(state=>state.todo.task);
     const dispatch = useDispatch();
+
+    const myedit = (id,work)=>{
+      setdata(work)
+      setbtn(false)
+      setid(id)
+    }
+
+    const myeditdata = ()=>{
+      setbtn(true)
+      dispatch(editdatasave({id:taskid , work:data}))
+      setdata("");
+    }
     let serialno =0;
     const ans = Task.map((key)=>{
       serialno++;
@@ -182,54 +188,43 @@ const App = ()=>{
       <tr style={{borderCollapse:"collapse" ,border:"1px solid black"}}>
         <td style={{borderCollapse:"collapse" ,border:"1px solid black"}}>{serialno}</td>
         <td style={{borderCollapse:"collapse" ,border:"1px solid black"}}>
-        {key.status=="incomplete" ? (<>{key.work}</>) : (<>
-          <span style={{color:"red" , textDecoration:"line-through"}}>{key.work}</span>
-        </>)}</td>
-        {/* <td style={{borderCollapse:"collapse" ,border:"1px solid black"}} ></td>
-        <td style={{borderCollapse:"collapse" ,border:"1px solid black"}}></td> */}
+        {key.status=="incomplete" ? (<>
+        <span style={{color:"red"}}>{key.work} </span>
+        </>) : (<>
+          <span style={{color:"darkgreen" }}>  {key.work}✅</span>
+        </>)}
+        </td>
+        <td style={{borderCollapse:"collapse" ,border:"1px solid black"}} >
+          <button onClick={()=>{dispatch(taskcomplete(key.id))}}>Completed</button>
+        </td>
+        <td style={{borderCollapse:"collapse" ,border:"1px solid black"}}>
+          <button onClick={()=>{dispatch(taskIncomplete(key.id))}}>Incomplete</button>
+        </td>
         <td>
         <button onClick={()=>{dispatch(taskdelete(key.id))}}>Delete</button>
+        </td>
+        <td>
+          <button onClick={()=>{myedit(key.id , key.work)}}>Edit</button>
         </td>
       </tr>
       </>
       )
     })
-{/* <i class="fa-solid fa-circle-check"></i>
-  <i class="fa-solid fa-circle-xmark"></i>
-  <i class="fa-solid fa-trash"></i> */}
 
-
-
-//   const [data , setdata] =useState("");
-//   const Task = useSelector(state=>state.todo.task);
-//   const dispatch = useDispatch();
-
-//   let sno=0;
-// const ans = Task.map((key)=>{
-// sno++;
-// return(
-//   <tr>
-//     <td>{sno}</td>
-//     <td>{key.work}</td>
-//   </tr>
-// )
-// })
   return(
     <>
 
 
 
-
-
-
-
-
-
-
-
 <h1>Welcome to ToDo App</h1>
 Enter Task : <input type="text" value={data} onChange={(e)=>{setdata(e.target.value)}} />
-<button onClick={()=>{dispatch(addtodoTask({id:Date.now(),work:data}))}}>Add To List</button>
+{btnstatus ? (<>
+<button onClick={()=>{dispatch(addtodoTask({id:Date.now(),work:data,status:"incomplete"}))}}>Add To List</button>
+</>):(<>
+<button onClick={myeditdata}>Edit save</button>
+</>)
+}
+
   <br/>
   <br/>
 
@@ -240,6 +235,7 @@ Enter Task : <input type="text" value={data} onChange={(e)=>{setdata(e.target.va
     <th style={{borderCollapse:"collapse" ,border:"1px solid black"}}>Completed</th>
     <th style={{borderCollapse:"collapse" ,border:"1px solid black"}}>Not Completed</th> 
     <th style={{borderCollapse:"collapse" ,border:"1px solid black"}}>Delete</th>
+    <th style={{borderCollapse:"collapse" ,border:"1px solid black"}}>Edit</th>
   </tr>
  <tbody>{ans}</tbody>
 </table>
