@@ -25,7 +25,8 @@ const todoslice = createSlice({
         taskIncomplete:(state,actions)=>{
             for(var i=0; i<state.task.length; i++){
                 if (state.task[i].id == actions.payload){
-                    state.task[i].status="Incomplete";
+                    state.task[i].status="incomplete";
+                   
                 }
             }
         },
